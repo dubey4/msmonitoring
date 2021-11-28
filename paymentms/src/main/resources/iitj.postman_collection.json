@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "4a6b0a3a-9b7a-4a48-a7b0-555d93e92688",
+		"name": "iitj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fetchcart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8082/cart/get/products/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"get",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addproductincart",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userId\":1,\r\n\"productId\":1,\r\n\"quantity\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/cart/add/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"add",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "placeorder",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/orders",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteproductincart",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"userId\":1,\r\n\"productId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8082/cart/delete/products",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"cart",
+						"delete",
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
