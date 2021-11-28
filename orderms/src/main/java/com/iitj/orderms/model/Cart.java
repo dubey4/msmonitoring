@@ -7,10 +7,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Order {
+public class Cart {
+	private long id;
 	
-	private String orderId;
+	private long userId;
+	
+	private long productId;
+	
+	private long quantity;
 	
 	private String status;
-
 }

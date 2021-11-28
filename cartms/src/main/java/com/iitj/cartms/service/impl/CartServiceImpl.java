@@ -29,6 +29,7 @@ public class CartServiceImpl implements CartService {
 		// TODO Auto-generated method stub
 		CartEntity cartEntity = cartAssembler.convertDTOToEntity(cart);
 		cartRepository.save(cartEntity);
+		cart.setId(cartEntity.getId());
 		return cart;
 	}
 

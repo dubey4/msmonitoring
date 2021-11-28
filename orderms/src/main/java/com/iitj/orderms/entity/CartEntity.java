@@ -10,22 +10,23 @@ import javax.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "user_order")
+@Table(name = "cart")
 @Data
-public class OrderEntity {
-	
+public class CartEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
 	private long id;
 	
-	@Column(name="order_id")
-	private String orderId;
-	
 	@Column(name="user_id")
 	private long userId;
 	
+	@Column(name="product_id")
+	private long productId;
+	
+	@Column(name="product_quantity")
+	private long quantity;
+	
 	@Column(name="status")
 	private String status;
-
 }

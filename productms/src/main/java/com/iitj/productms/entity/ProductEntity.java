@@ -26,5 +26,7 @@ public class ProductEntity {
 	private String productDescription;
 	@Column(name="product_count")
 	private int productCount;
+	@Column(name="single_product_price")
+	private double productPrice;
 
 }
