@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import com.iitj.orderms.model.Cart;
 import com.iitj.orderms.model.Order;
@@ -12,8 +13,14 @@ import com.iitj.orderms.service.OrderService;
 @RestController
 public class OrderController {
 	
+	
+
+	
 	@Autowired
 	OrderService orderService;
+	
+	@Autowired
+	RestTemplate restTemplate;
 
 	@PostMapping("/orders")
 	public Order palceOrder(@RequestBody  Cart cart) {

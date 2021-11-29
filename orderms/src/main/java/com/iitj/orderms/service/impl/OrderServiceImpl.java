@@ -3,9 +3,10 @@ package com.iitj.orderms.service.impl;
 import java.util.List;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import com.iitj.orderms.assembler.OrderAssembler;
 import com.iitj.orderms.entity.CartEntity;
@@ -18,6 +19,7 @@ import com.iitj.orderms.service.OrderService;
 
 @Service
 public class OrderServiceImpl implements OrderService {
+	private static final Logger LOGGER = LoggerFactory.getLogger(OrderServiceImpl.class);
 	
 	@Autowired
 	CartRepository cartRepository;
@@ -31,7 +33,7 @@ public class OrderServiceImpl implements OrderService {
 
 	@Override
 	public Order palceOrder(Cart cart) {
-		// TODO Auto-generated method stub
+		LOGGER.info("Entry");
 		 List<CartEntity> cartEntities = cartRepository.getByUserId(cart.getUserId());
 		 
 		 cartEntities.forEach(ce->{
@@ -48,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
 		 order.setStatus("S");
 		 
 		 orderRepository.save(order);
-		 
+		 LOGGER.info("Exit");
 		 return orderAssembler.convertEntityToDto(order);
 	}
 
